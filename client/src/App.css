@@ -1,0 +1,10 @@
+.App {
+    text-align: center;
+}
+
+.float-right {
+    margin-left: auto;
+    width: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,12 @@
+.user-chat-input {
+    display: flex;
+}
+
+.user-input {
+    float: right;
+    height: 80px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
