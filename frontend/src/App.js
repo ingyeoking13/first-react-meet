@@ -11,10 +11,9 @@ let host = ''
 
 console.log(process.env.REACT_APP_NODE_ENV)
 console.log(process.env.NODE_ENV)
-if (process.env.NODE_ENV === 'production') host = 'http://101.101.218.26:3002/'
-else if (process.env.REACT_APP_NODE_ENV === 'development')
+if (process.env.REACT_APP_NODE_ENV === 'development')
     host = 'http://127.0.0.1:3000'
-else host = 'http://127.0.0.1:3000'
+else host = 'http://101.101.218.26:3002/'
 
 const socket = io(host, {})
 
