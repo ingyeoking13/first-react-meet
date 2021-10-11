@@ -6,7 +6,15 @@ import { Terminal } from './Components/Terminal'
 import { useState } from 'react'
 
 import io from 'socket.io-client'
-const socket = io('http://127.0.0.1:3000', {})
+import path from 'path'
+let host = ''
+
+console.log(process.env.REACT_APP_NODE_ENV)
+if (process.env.REACT_APP_NODE_ENV === 'production')
+    host = 'http://101.101.218.26:3002/'
+else host = 'http://127.0.0.1:3000'
+
+const socket = io(host, {})
 
 function App() {
     const [childprops, setProps] = useState({})
