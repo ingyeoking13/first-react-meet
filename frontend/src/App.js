@@ -6,17 +6,11 @@ import { Terminal } from './Components/Terminal'
 import { useState } from 'react'
 
 import io from 'socket.io-client'
+const socket = io('http://127.0.0.1:3000', {})
 
 function App() {
     const [childprops, setProps] = useState({})
-    const socket = io('https://127.0.0.1:4000', {
-        extraHeaders: {
-            'my-custom-header': 'abcd',
-        },
-    })
-    socket.connect((r) => {
-        console.log(r)
-    })
+    socket.connect()
 
     return (
         <div className="App">
@@ -33,3 +27,4 @@ function App() {
 }
 
 export default App
+export { socket }

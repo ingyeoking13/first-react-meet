@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { socket } from '../App'
 import './Terminal.css'
 export function Terminal(props) {
     const [chat, setChat] = useState('')
@@ -8,7 +9,12 @@ export function Terminal(props) {
                 class="user-input"
                 onChange={({ target }) => setChat(target.value)}
             ></textarea>
-            <button class="submit" onClick={() => props.OnSubmit(chat)}>
+            <button
+                class="submit"
+                onClick={() => {
+                    socket.emit('message', chat)
+                }}
+            >
                 submit
             </button>
         </div>
