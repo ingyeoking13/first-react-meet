@@ -5,11 +5,7 @@ import {Article} from './Components/Article'
 import {Terminal} from './Components/Terminal'
 import io from 'socket.io-client'
 
-let host = ''
-if (process.env.NODE_ENV == 'production') host = 'http://101.101.218.26:3002'
-else host = process.env.REACT_APP_WEBHOST
-
-const socket = io(host)
+const socket = io(process.env.REACT_APP_WEBHOST)
 socket.connect()
 
 function App() {
