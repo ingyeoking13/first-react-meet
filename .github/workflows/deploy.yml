@@ -52,6 +52,6 @@ jobs:
                       cd ../
                       cd backend
                       npm install
-                      pm2 pid $PROJECT_NAME && pm2 delete $PROJECT_NAME 
+                      pm2 pid $PROJECT_NAME | grep -E [0-9]  && echo hi
                       pm2 start ./bin/www.js --name $PROJECT_NAME
                       echo "build done!"
