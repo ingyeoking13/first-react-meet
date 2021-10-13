@@ -21,7 +21,7 @@ jobs:
         runs-on: ubuntu-latest
         environment: boostcamp-ncloud
         env:
-            PROJECT_FOLDER: ./javascript-sock-chat
+            PROJECT_FOLDER: ~/javascript-sock-chat
             PROJECT_NAME: sock-chat
             NGINX_FOLDER: /usr/share/nginx/html
 
