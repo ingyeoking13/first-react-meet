@@ -3,9 +3,11 @@ const http = require('http')
 const path = require('path')
 const debug = require('debug')('bmtown:server')
 const server = http.createServer(app)
-const fs = require('fs')
-const socketIO = require('socket.io')
-const io = socketIO(server, {})
+const io = require('socket.io')(server, {
+    cors: {
+        origin: '*',
+    },
+})
 
 let clients = []
 
@@ -30,7 +32,7 @@ io.on('connection', (socket) => {
     })
 })
 
-server.listen(3000)
+server.listen(3002)
 
 server.on('listening', onListening)
 

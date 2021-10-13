@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import { socket } from '../App'
+import React, {useState} from 'react'
+import {socket} from '../App'
 import './Terminal.css'
 export function Terminal(props) {
     const [chat, setChat] = useState('')
     return (
-        <div class="user-chat-input">
+        <div className="user-chat-input">
             <textarea
-                class="user-input"
-                onChange={({ target }) => setChat(target.value)}
+                className="user-input"
+                onChange={({target}) => setChat(target.value)}
             ></textarea>
             <button
-                class="submit"
+                className="submit"
                 onClick={() => {
                     socket.emit('message', chat)
                 }}

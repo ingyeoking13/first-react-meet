@@ -14,7 +14,7 @@
         "web-vitals": "^1.1.2"
     },
     "scripts": {
-        "start": "react-scripts start",
+        "start": "NODE_ENV='development' react-scripts start",
         "build": "react-scripts build && cp -r build/* ../backend/public",
         "build:dev": "dotenv -e .env.dev react-scripts build && cp -r build/* ../backend/public",
         "test": "react-scripts test",

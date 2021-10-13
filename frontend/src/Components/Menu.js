@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { socket } from '../App'
+import {useEffect, useState} from 'react'
+import {socket} from '../App'
 import './Menu.css'
 
 export function Menu() {
@@ -10,7 +10,7 @@ export function Menu() {
         })
     })
     return (
-        <div class="drawer-menu">
+        <div className="drawer-menu">
             <ul>
                 {userList?.map((user) => (
                     <li>{user}</li>

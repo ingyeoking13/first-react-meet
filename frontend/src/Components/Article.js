@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { socket } from '../App'
+import {useState, useEffect} from 'react'
+import {socket} from '../App'
 import './Article.css'
 
 export function Article(props) {
@@ -9,15 +9,15 @@ export function Article(props) {
     }
     useEffect(() => {
         socket.on('message', update)
-        // return function cleanup() {
-        //     socket.off('message', update)
-        // }
+        return function cleanup() {
+            socket.off('message', update)
+        }
     })
 
     return (
-        <article class="main-area">
+        <article className="main-area">
             <textarea
-                class="text-area"
+                className="text-area"
                 readOnly={true}
                 value={message}
             ></textarea>
