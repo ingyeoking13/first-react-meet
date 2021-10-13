@@ -38,9 +38,9 @@ jobs:
                   password: ${{secrets.BMNCLOUDWEBSERVER_PASS}}
                   port: ${{secrets.BMNCLOUDWEBSERVER_PORT}}
                   envs: PROJECT_FOLDER,PROJECT_NAME,NGINX_FOLDER
+                  script_stop: true
                   script: |
                       cd $PROJECT_FOLDER
-                      ls -al
                       pwd
                       cd frontend
                       npm install
