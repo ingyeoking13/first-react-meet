@@ -21,7 +21,7 @@ jobs:
         runs-on: ubuntu-latest
         environment: boostcamp-ncloud
         env:
-            PROJECT_FOLDER: ~/javascript-sock-chat
+            PROJECT_FOLDER: ./javascript-sock-chat
             PROJECT_NAME: sock-chat
             NGINX_FOLDER: /usr/share/nginx/html
 
@@ -49,7 +49,7 @@ jobs:
                       # npm install
                       # npm run build
                       cp -r ./build/* $NGINX_FOLDER
-                      cd $PROJECT_FOLDER
+                      cd ../
                       cd backend
                       npm install
                       pm2 startOrReload ./bin/www --name $PROJECT_NAME
