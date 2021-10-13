@@ -40,7 +40,8 @@ jobs:
                   envs: PROJECT_FOLDER,PROJECT_NAME,NGINX_FOLDER
                   script_stop: true
                   script: |
-                      source ./.bashrc
+                      export NVM_DIR=~/.nvm
+                      source ~/.nvm/nvm.sh
                       cd $PROJECT_FOLDER
                       git pull
                       pwd
