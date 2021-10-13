@@ -39,6 +39,7 @@ jobs:
                   port: ${{secrets.BMNCLOUDWEBSERVER_PORT}}
                   script: |
                       cd $PROJECT_FOLDER
+                      ls -al
                       pwd
                       cd frontend
                       npm install
