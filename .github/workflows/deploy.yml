@@ -21,7 +21,7 @@ jobs:
         runs-on: ubuntu-latest
         environment: boostcamp-ncloud
         env:
-            PROJECT_FOLDER: ~/javascript-sock-chat/
+            PROJECT_FOLDER: ./javascript-sock-chat
             PROJECT_NAME: sock-chat
             NGINX_FOLDER: /usr/share/nginx/html
 
@@ -37,6 +37,7 @@ jobs:
                   username: ${{secrets.BMNCLOUDWEBSERVER_USER}}
                   password: ${{secrets.BMNCLOUDWEBSERVER_PASS}}
                   port: ${{secrets.BMNCLOUDWEBSERVER_PORT}}
+                  envs: PROJECT_FOLDER,PROJECT_NAME,NGINX_FOLDER
                   script: |
                       cd $PROJECT_FOLDER
                       ls -al
