@@ -20,6 +20,10 @@ jobs:
         # The type of runner that the job will run on
         runs-on: ubuntu-latest
         environment: boostcamp-ncloud
+        env:
+            PROJECT_FOLDER: ~/javascript-sock-chat/
+            PROJECT_NAME: sock-chat
+            NGINX_FOLDER: /usr/share/nginx/html
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
@@ -33,9 +37,13 @@ jobs:
                   username: ${{secrets.BMNCLOUDWEBSERVER_USER}}
                   password: ${{secrets.BMNCLOUDWEBSERVER_PASS}}
                   port: ${{secrets.BMNCLOUDWEBSERVER_PORT}}
-                  script: ifconfig
-
-            # Runs a set of commands using the runners shell
-            - name: Run a multi-line script
-              run: echo Add other actions to build,
-                  echo test, and deploy your project.
+                  script: cd $PROJECT_FOLDER
+                      cd frontend
+                      npm install
+                      npm run build
+                      cp -r ./build/* $NGINX_FOLDER
+                      cd $PROJECT_FOLDER
+                      cd backend
+                      npm install
+                      pm2 startOrReload ./bin/www --name $PROJECT_NAME
+                      echo "build done!"
