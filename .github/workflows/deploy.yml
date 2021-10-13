@@ -40,7 +40,9 @@ jobs:
                   envs: PROJECT_FOLDER,PROJECT_NAME,NGINX_FOLDER
                   script_stop: true
                   script: |
+                      source ./.bashrc
                       cd $PROJECT_FOLDER
+                      git pull
                       pwd
                       cd frontend
                       npm install
