@@ -52,6 +52,6 @@ jobs:
                       cd ../
                       cd backend
                       npm install
-                      pm2 delete $PROJECT_NAME 2> /dev/null
+                      pm2 pid $PROJECT_NAME && pm2 delete $PROJECT_NAME 
                       pm2 start ./bin/www.js --name $PROJECT_NAME
                       echo "build done!"
