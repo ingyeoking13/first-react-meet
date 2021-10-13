@@ -46,8 +46,8 @@ jobs:
                       git pull
                       # pwd
                       cd frontend
-                      # npm install
-                      # npm run build
+                      npm install
+                      npm run build
                       cp -r ./build/* $NGINX_FOLDER
                       cd $PROJECT_FOLDER
                       cd backend
