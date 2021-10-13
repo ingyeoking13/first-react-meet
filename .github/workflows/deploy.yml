@@ -37,7 +37,8 @@ jobs:
                   username: ${{secrets.BMNCLOUDWEBSERVER_USER}}
                   password: ${{secrets.BMNCLOUDWEBSERVER_PASS}}
                   port: ${{secrets.BMNCLOUDWEBSERVER_PORT}}
-                  script: cd $PROJECT_FOLDER
+                  script: |
+                      cd $PROJECT_FOLDER
                       cd frontend
                       npm install
                       npm run build
