@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {socket} from '../App'
 import './Terminal.css'
-export function Terminal(props) {
+export function Terminal() {
     const [chat, setChat] = useState('')
     return (
         <div className="user-chat-input">

@@ -2,11 +2,12 @@ import {useState, useEffect} from 'react'
 import {socket} from '../App'
 import './Article.css'
 
-export function Article(props) {
+export function Article() {
     let [message, setMessage] = useState('')
     function update(value) {
         setMessage(message + '\n' + value)
     }
+
     useEffect(() => {
         socket.on('message', update)
         return function cleanup() {
