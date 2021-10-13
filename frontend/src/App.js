@@ -3,7 +3,6 @@ import {Header} from './Components/Header'
 import {Menu} from './Components/Menu'
 import {Article} from './Components/Article'
 import {Terminal} from './Components/Terminal'
-import {useEffect, useState} from 'react'
 import io from 'socket.io-client'
 
 const socket = io(process.env.REACT_APP_WEBHOST)
